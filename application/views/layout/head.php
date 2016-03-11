@@ -1,5 +1,4 @@
-<meta charset="utf-8">
-<title>Welcome to CodeIgniter</title>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
 <link href="assets/css/bootstrap.css" rel="stylesheet">
 <link href="assets/css/bootstrap.min.css" rel="stylesheet">
 <!-- Custom CSS -->
