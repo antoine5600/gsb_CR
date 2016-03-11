@@ -20,12 +20,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         </div>
     </div>
     <!-- /.container -->
-
-    <!-- jQuery -->
-    <script src="assets/js/jquery.js"></script>
-
-    <!-- Bootstrap Core JavaScript -->
-    <script src="assets/js/bootstrap.min.js"></script>
-
+    <?php include('script/script.php');?>
 </body>
 </html>
