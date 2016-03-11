@@ -9,7 +9,7 @@
 				<span class="icon-bar"></span>
 			</button>
 			<a class="navbar-brand" href="#">
-				<img src="http://placehold.it/150x50&text=Logo" alt="">
+				<img src="http://gsb-ahmed.fr/wp-content/uploads/2015/10/LOGO-GSB.png" alt="logo" style="width: 110px;">
 			</a>
 		</div>
 		<!-- Collect the nav links, forms, and other content for toggling -->
@@ -19,7 +19,16 @@
 					<a href="#">About</a>
 				</li>
 				<li>
-					<a href="#">Services</a>
+					<a href="#">Compte-Rendu</a>
+				</li>
+				<li>
+					<a href="#">Visiteur</a>
+				</li>
+				<li>
+					<a href="#">Practiciens</a>
+				</li>
+				<li>
+					<a href="#">Medicaments</a>
 				</li>
 				<li>
 					<a href="#">Contact</a>

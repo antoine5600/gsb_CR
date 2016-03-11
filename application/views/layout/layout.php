@@ -9,7 +9,7 @@
 				<span class="icon-bar"></span>
 			</button>
 			<a class="navbar-brand" href="#">
-				<img src="http://placehold.it/150x50&text=Logo" alt="">
+				<img src="http://gsb-ahmed.fr/wp-content/uploads/2015/10/LOGO-GSB.png" alt="logo" style="width: 110px;">
 			</a>
 		</div>
 		<!-- Collect the nav links, forms, and other content for toggling -->
