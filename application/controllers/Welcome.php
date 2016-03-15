@@ -35,8 +35,7 @@ class Welcome extends CI_Controller {
 	
 	public function connecter()
 	{
-		print_r('ici');
-		die();
+		
 		$this->load->model('user');
 	
 		$login = $this->input->post('login');
@@ -47,7 +46,7 @@ class Welcome extends CI_Controller {
 		if(empty($authUser))
 		{
 			$data = array('erreur'=>'Login ou mot de passe incorrect');
-			$this->templates->load('login', $data);
+			$this->load->view('login/login.php',$data);
 		}
 		else
 		{
