@@ -1,10 +1,10 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
 /**
- * Modèle qui implémente les fonctions d'accès aux données 
+ * Modï¿½le qui implï¿½mente les fonctions d'accï¿½s aux donnï¿½es 
 */
 class DataAccess extends CI_Model {
-// TODO : Transformer toutes les requêtes en requêtes paramétrées
+// TODO : Transformer toutes les requï¿½tes en requï¿½tes paramï¿½trï¿½es
 
     function __construct()
     {
@@ -17,7 +17,7 @@ class DataAccess extends CI_Model {
 	 * 
 	 * @param $login 
 	 * @param $mdp
-	 * @return l'id, le nom et le prénom sous la forme d'un tableau associatif 
+	 * @return l'id, le nom et le prï¿½nom sous la forme d'un tableau associatif 
 	*/
 	public function getInfosVisiteur($login, $mdp){
 		$req = "select visiteur.id as id, visiteur.nom as nom, visiteur.prenom as prenom, visiteur.statut as statut
@@ -26,6 +26,14 @@ class DataAccess extends CI_Model {
 		$rs = $this->db->query($req, array ($login, $mdp));
 		$ligne = $rs->first_row('array'); 
 		return $ligne;
+	}
+	
+	public function getlistcompterendu($id){
+		$req = "select RAP_BILAN
+		from rapport_visite
+		where = "+$id;
+		
+		return $req;
 	}
 
 }

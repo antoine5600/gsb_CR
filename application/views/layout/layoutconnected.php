@@ -18,7 +18,7 @@
 					</a>
 				</li>
 				<li>
-					<a href="#">Compte-Rendu</a>
+					<?php echo anchor('crController/index','Compte-Rendu')?>
 				</li>
 				<li>
 					<a href="#">Visiteur</a>
@@ -30,7 +30,7 @@
 					<a href="#">Medicaments</a>
 				</li>
 				<li>
-					<a href="contact.php">Contact</a>
+					<a href="#">Contact</a>
 				</li>
 				<li class="logout">
 					<a href="login.php"><i class="fa fa-sign-out"></i> Se Déconnecter</a>
