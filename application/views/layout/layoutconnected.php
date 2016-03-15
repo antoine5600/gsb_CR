@@ -18,7 +18,7 @@
 					</a>
 				</li>
 				<li>
-					<a href="#">Compte-Rendu</a>
+					<a href="#">Compte-Renduu</a>
 				</li>
 				<li>
 					<a href="#">Visiteur</a>
