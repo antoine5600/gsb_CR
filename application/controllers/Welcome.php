@@ -33,7 +33,7 @@ class Welcome extends CI_Controller {
 		}
 	}
 	
-	public function connecter ()
+	public function connecter()
 	{
 		print_r('ici');
 		die();
