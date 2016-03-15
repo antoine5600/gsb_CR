@@ -8,13 +8,15 @@
 				<span class="icon-bar"></span>
 				<span class="icon-bar"></span>
 			</button>
-			<a class="navbar-brand" href="#">
-				<img src="http://gsb-ahmed.fr/wp-content/uploads/2015/10/LOGO-GSB.png" alt="logo" style="width: 110px;">
-			</a>
 		</div>
 		<!-- Collect the nav links, forms, and other content for toggling -->
 		<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 			<ul class="nav navbar-nav">
+				<li>
+					<a class="navbar-brand" href="#">
+						<img src="http://gsb-ahmed.fr/wp-content/uploads/2015/10/LOGO-GSB.png" alt="logo" style="width: 110px;">
+					</a>
+				</li>
 				<li>
 					<a href="#">Compte-Rendu</a>
 				</li>
@@ -29,6 +31,9 @@
 				</li>
 				<li>
 					<a href="contact.php">Contact</a>
+				</li>
+				<li class="logout">
+					<a href="login.php"><i class="fa fa-sign-out"></i> Se Déconnecter</a>
 				</li>
 			</ul>
 		</div>
