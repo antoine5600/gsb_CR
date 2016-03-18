@@ -29,12 +29,12 @@ class DataAccess extends CI_Model {
 	}
 	
 	public function getlistcompterendu($id){
-		$req = "select RAP_BILAN
+		$req = "select RAP_BILAN, RAP_DATE, RAP_MOTIF
 		from rapport_visite
 		where VIS_Matricule = ?";
 		$rs = $this->db->query($req, array ($id));
-		$ligne = $rs->first_row('array');
-;
+		$ligne = $rs->result_array();
+		
 		return $ligne;
 	}
 
