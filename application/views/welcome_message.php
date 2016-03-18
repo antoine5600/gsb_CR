@@ -4,7 +4,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <html lang="en">
 <head>
 	<title>Accueil</title>
-	<?php include('layout/head.php');?>	
+	<?php include('layout/head.php');?>
 </head>
 <body>
 
