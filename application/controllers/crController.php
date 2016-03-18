@@ -21,7 +21,7 @@ class crController extends CI_Controller {
 	public function index()
 	{
 		$this->load->model('crModel');
-		$listecr = $this->crController->listecr();
+		$listecr = $this->listecr();
 		print_r('blablacontroller');
 		die();
 		$this->load->view('cr/consulter.php',$listecr);
@@ -29,12 +29,13 @@ class crController extends CI_Controller {
 	
 	public function listecr()
 	{
-		print_r('blabla');
-		die();
 		$this->load->model('user');
 		$this->load->model('crModel');
 		$id = $this->session->id;
+		$listcr = array();
 		$listcr->crModel->listecompterendu($id);
+		print_r('blablalistecr');
+		die();
 		
 		return $listcr;
 	}	
