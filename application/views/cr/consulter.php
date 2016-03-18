@@ -3,13 +3,13 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 ?><!DOCTYPE html>
 <html lang="en">
 <head>
-	<title>Consulter Compte-Rendu</title>
-	<?php include('layout/head.php');?>	
+	<title>Consulter Compte-Rendu</title>	
+	<?php $this->load->view('layout/head.php');?>
 </head>
 <body>
 
     <!-- Navigation -->
-    <?php include('layout/layoutconnected.php');?>
+    <?php $this->load->view('layout/layoutconnected.php');?>
 
     <!-- Page Content -->
     <div class="container">
@@ -17,13 +17,13 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             <div class="col-lg-12">
             	<?php 
             	foreach ($listecr as $ligne){
-            		echo $ligne['RAP_BILAN'];
+            		echo $ligne;
             	}
             	?>
             </div>
         </div>
     </div>
     <!-- /.container -->
-    <?php include('script/script.php');?>
+    <?php $this->load->view('script/script.php');?>
 </body>
 </html>

@@ -21,8 +21,8 @@ class crModel extends CI_Model {
 	
 	public function listecompterendu($id)
 	{
+		$this->load->model('dataAccess');
 		$listcr = $this->dataAccess->getlistcompterendu($id);
-		
 		return $listcr;
 	}
 
