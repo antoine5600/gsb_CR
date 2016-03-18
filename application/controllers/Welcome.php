@@ -22,7 +22,7 @@ class Welcome extends CI_Controller {
 	{
 		$this->load->model('user');
 		$this->load->helper('form');
-		if (!$this->user->estConnecte()) 
+		if (!$this->session->userdata('idUser')) 
 		{
 			$data = array();
 			$this->load->view('login/login.php',$data);
@@ -51,7 +51,15 @@ class Welcome extends CI_Controller {
 		else
 		{
 			$this->user->connecter($authUser['id'], $authUser['nom'], $authUser['prenom']);
-			$this->load->view('welcome_message.php');
+			$this->index();
 		}
+	}
+	
+	public function deconnecter()
+	{
+		$this->load->model('user');
+	
+		$this->session->sess_destroy();
+		$this->load->view('login/login');
 	}
 }

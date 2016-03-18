@@ -8,7 +8,7 @@ class User extends CI_Model {
 	}
 
 	/**
-	 * Teste si un quelconque visiteur est connecté
+	 * Teste si un quelconque visiteur est connectï¿½
 	 *
 	 * @return vrai ou faux
 	 */
@@ -25,7 +25,7 @@ class User extends CI_Model {
 	 * @param $prenom
 	 */
 	public function connecter($idUser,$nom,$prenom)
-	{	// TODO : s'assurer que les paramètres reçus sont cohérents avec ceux mémorisés en session
+	{	// TODO : s'assurer que les paramï¿½tres reï¿½us sont cohï¿½rents avec ceux mï¿½morisï¿½s en session
 
 		$authUser = array(
 				'idUser'  => $idUser,
@@ -37,31 +37,17 @@ class User extends CI_Model {
 	}
 
 	/**
-	 * Détruit la session active et redirige vers le contrôleur par défaut
+	 * Dï¿½truit la session active et redirige vers le contrï¿½leur par dï¿½faut
 	 */
-	public function deconnecter()
-	{
-		$authUser = array(
-				'idUser'  => '',
-				'nom' => '',
-				'prenom' => '',
-				'statut' => ''
-		);
 
-		$this->session->unset_userdata($authUser);
-		$this->session->sess_destroy();
-
-		$this->load->helper('url');
-		redirect('/c_default/');
-	}
 
 	/**
-	 * Vérifie en base de données si les informations de connexions sont correctes
+	 * Vï¿½rifie en base de donnï¿½es si les informations de connexions sont correctes
 	 *
 	 * @return : renvoie l'id, le nom et le prenom de l'utilisateur dans un tableau s'il est reconnu, sinon un tableau vide.
 	 */
 	public function authentifier ($login, $mdp)
-	{	// TODO : s'assurer que les paramètres reçus sont cohérents avec ceux mémorisés en session
+	{	// TODO : s'assurer que les paramï¿½tres reï¿½us sont cohï¿½rents avec ceux mï¿½morisï¿½s en session
 
 
 		$authUser = $this->getInfosVisiteur($login, $mdp);
