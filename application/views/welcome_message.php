@@ -22,7 +22,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 					praticiens et de pouvoir vous y retrouver simplement grâce a cette gestion informatique. </br>
 					</br>
 					A terme, cette application servira à centraliser ces informations grâce a un envoi périodique des informations saisies a votre delegue régional</br>
-					et au responsable de secteur. 
+					et au responsable de secteur.
                 </p>
             </div>
         </div>
