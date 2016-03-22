@@ -3,7 +3,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 ?><!DOCTYPE html>
 <html lang="en">
 <head>
-	<title>Bienvenue sur GSB</title>
+	<title>Ajouter un compte rendu</title>
 	<?php
 		$this->load->view('layout/head.php');
 	?>
@@ -21,16 +21,20 @@ $this->load->view('layout/layout.php');
     <div class="container">
         <div class="row">
             <div class="col-lg-12">
-			   <h2>Identification utilisateur</h2>
+			   <h2>Ajouter un compte rendu</h2>
 				<?php if (isset($erreur))	echo '<div class ="erreur"><ul><li>'.$erreur.'</li></ul></div>'; ?>
-				<form method="post" action="<?php echo $path.'Welcome/connecter';?>">
+				<form method="post" action="<?php echo $path.'crController/ajoutcr';?>">
 					<p>
-						<label for="login">Login*</label>
-						<input id="login" type="text" name="login"  size="30" maxlength="45"/>
+						<label for="motif">Motif Visite*</label>
+						<input id="motif" type="text" name="motif"  size="30" maxlength="45"/>
 					</p>
 					<p>
-						<label for="mdp">Mot de passe*</label>
-						<input id="mdp"  type="password"  name="mdp" size="30" maxlength="45"/>
+						<label for="bilan">Bilan*</label>
+						<input id="bilan"  type="text"  name="bilan" size="30" maxlength="45"/>
+					</p>
+					<p>
+						<label for="date">Date Visite*</label>
+						<input id="date" type="date" name="date"  size="30" maxlength="45"/>
 					</p>
 					<p>
 						<input type="submit" value="Valider" name="valider"/>

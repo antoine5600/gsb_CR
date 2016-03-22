@@ -7,7 +7,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	<?php $this->load->view('layout/head.php');?>
 </head>
 <body>
-
+<?php
+	$this->load->helper('url');
+	$path = base_url();
+?>
     <!-- Navigation -->
     <?php $this->load->view('layout/layoutconnected.php');?>
 
@@ -15,6 +18,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     <div class="container">
         <div class="row">
             <div class="col-lg-12">
+            <a href="<?php echo $path ?>crController/formajoutcr" class='btn btn-primary'><i class="fa fa-plus"></i> Ajouter Compte-rendu</a>
             <?php if($listecr){ ?>
 	            <table class="table table-hover">
 					<thead>

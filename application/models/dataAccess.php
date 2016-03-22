@@ -35,7 +35,29 @@ class DataAccess extends CI_Model {
 		order by RAP_DATE desc";
 		$rs = $this->db->query($req, array ($id));
 		$ligne = $rs->result_array();
-		
+		return $ligne;
+	}
+	
+	public function getAllPraticien(){
+		$req = "select *
+		from praticien";
+		$rs = $this->db->query($req, array ());
+		$ligne = $rs->result_array();
+		return $ligne;
+	}
+	public function getAllMedicament(){
+		$req = "select *
+		from medicament";
+		$rs = $this->db->query($req, array ());
+		$ligne = $rs->result_array();
+		return $ligne;
+	}
+	
+	public function ajoutcr($motif, $bilan, $date, $idUser){
+		$req = "INSERT INTO rapport_visite (VIS_MATRICULE, RAP_MOTIF, RAP_BILAN, RAP_DATE)
+				 VALUES('$idUser', '$motif', '$bilan', '$date')";
+		$rs = $this->db->query($req, array ());
+		$ligne = 1;
 		return $ligne;
 	}
 

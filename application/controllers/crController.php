@@ -20,20 +20,79 @@ class crController extends CI_Controller {
 	 */
 	public function index()
 	{
-		$this->load->model('crModel');
-		$data ['listecr'] = $this->listecr();
-		$this->load->view('cr/consulter.php',$data);
+		if (!$this->session->userdata('idUser')) 
+		{
+			$data = array();
+			$this->load->view('login/login.php',$data);
+		}
+		else
+		{
+			$this->load->model('crModel');
+			$data ['listecr'] = $this->listecr();
+			$this->load->view('cr/consulter.php',$data);
+		}
 	}
 	
 	public function listecr()
 	{
-		$this->load->model('user');
-		$this->load->model('crModel');
-		$id = $this->session->userdata('idUser');
-		$listcr = $this->crModel->listecompterendu($id);
+		if (!$this->session->userdata('idUser'))
+		{
+			$data = array();
+			$this->load->view('login/login.php',$data);
+		}
+		else
+		{
+			$this->load->model('user');
+			$this->load->model('crModel');
+			$id = $this->session->userdata('idUser');
+			$listcr = $this->crModel->listecompterendu($id);
+		}
 		
 		return $listcr;
 	}	
+	
+	public function formajoutcr()
+	{
+		if (!$this->session->userdata('idUser'))
+		{
+			$data = array();
+			$this->load->view('login/login.php',$data);
+		}
+		else
+		{
+			$this->load->model('user');
+			$this->load->model('crModel');
+			$id = $this->session->userdata('idUser');
+			$listpraticien = $this->crModel->listpraticien();
+			$listmedicament = $this->crModel->listmedicament();
+			$data ['listpraticien'] = $listpraticien;
+			$data ['listmedicament'] = $listmedicament;
+			$this->load->view('cr/ajoutcr.php',$data);
+		}
+	}
+	
+	public function ajoutcr()
+	{
+		if (!$this->session->userdata('idUser'))
+		{
+			$data = array();
+			$this->load->view('login/login.php',$data);
+		}
+		else
+		{
+			$this->load->model('user');
+			$this->load->model('crModel');
+		
+			$motif = $this->input->post('motif');
+			$bilan = $this->input->post('bilan');
+			$date = $this->input->post('date');
+		
+			$idUser = $this->session->idUser;
+	
+				$this->crModel->ajoutcr($motif, $bilan, $date, $idUser);
+				$this->index();
+		}
+	}
 		
 }
 
