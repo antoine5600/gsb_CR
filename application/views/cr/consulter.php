@@ -23,6 +23,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 							<th>Date</th>
 							<th>Motif</th>
 							<th>Bilan</th>
+							<th>Action</th>
 						</tr>
 					</thead>
 					<tbody>
@@ -36,6 +37,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 							  			echo "<td>".$listecr[$i]['RAP_DATE']."</td>";
 							  			echo "<td>".$listecr[$i]['RAP_MOTIF']."</td>";
 						            	echo "<td>".$listecr[$i]['RAP_BILAN']."</td>";
+						            	echo "<td> <a class='btn btn-primary'>Détails</a> </td>";
 						            	$indice += 1;
 					            	echo "</tr>";
 					            }

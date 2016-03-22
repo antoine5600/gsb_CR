@@ -31,7 +31,8 @@ class DataAccess extends CI_Model {
 	public function getlistcompterendu($id){
 		$req = "select RAP_BILAN, RAP_DATE, RAP_MOTIF
 		from rapport_visite
-		where VIS_Matricule = ?";
+		where VIS_Matricule = ?
+		order by RAP_DATE desc";
 		$rs = $this->db->query($req, array ($id));
 		$ligne = $rs->result_array();
 		
