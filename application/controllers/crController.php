@@ -86,10 +86,11 @@ class crController extends CI_Controller {
 			$motif = $this->input->post('motif');
 			$bilan = $this->input->post('bilan');
 			$date = $this->input->post('date');
+			$praticien = $this->input->post('praticien');
 		
 			$idUser = $this->session->idUser;
 	
-				$this->crModel->ajoutcr($motif, $bilan, $date, $idUser);
+				$this->crModel->ajoutcr($motif, $bilan, $date, $idUser,$praticien);
 				$this->index();
 		}
 	}

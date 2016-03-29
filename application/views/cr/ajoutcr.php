@@ -15,7 +15,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	$path = base_url();
 ?>
 <?php
-$this->load->view('layout/layout.php');
+$this->load->view('layout/layoutconnected.php');
 ?>
     <!-- Page Content -->
     <div class="container">
@@ -36,6 +36,15 @@ $this->load->view('layout/layout.php');
 						<label for="date">Date Visite*</label>
 						<input id="date" type="date" name="date"  size="30" maxlength="45"/>
 					</p>
+					<label for="praticien">Choix du praticien*</label>
+					<select name="praticien">
+					<?php foreach ($listpraticien as $praticien)
+					{
+						echo "<option value=".$praticien['PRA_NUM'].">";
+						echo $praticien['PRA_NOM']."</option>";
+					}
+					?>
+					</select>
 					<p>
 						<input type="submit" value="Valider" name="valider"/>
 						<input type="reset" value="Annuler" name="annuler"/> 

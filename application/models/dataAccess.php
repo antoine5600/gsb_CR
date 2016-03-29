@@ -53,9 +53,9 @@ class DataAccess extends CI_Model {
 		return $ligne;
 	}
 	
-	public function ajoutcr($motif, $bilan, $date, $idUser){
-		$req = "INSERT INTO rapport_visite (VIS_MATRICULE, RAP_MOTIF, RAP_BILAN, RAP_DATE)
-				 VALUES('$idUser', '$motif', '$bilan', '$date')";
+	public function ajoutcr($motif, $bilan, $date, $idUser, $praticien){
+		$req = "INSERT INTO rapport_visite (VIS_MATRICULE, RAP_MOTIF, RAP_BILAN, RAP_DATE, PRA_NUM)
+				 VALUES('$idUser', '$motif', '$bilan', '$date', '$praticien')";
 		$rs = $this->db->query($req, array ());
 		$ligne = 1;
 		return $ligne;
