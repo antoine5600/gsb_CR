@@ -34,5 +34,10 @@ class crModel extends CI_Model {
 		$this->load->model('dataAccess');
 		$ligne = $this->dataAccess->ajoutcr($motif, $bilan, $date, $idUser, $praticien);
 	}
+	
+	public function ajoutmedicament($idUser,$echantillions,$medicament,$rap_num){
+		$this->load->model('dataAccess');
+		$ligne = $this->dataAccess->ajoutmedicament($idUser,$echantillions,$medicament,$rap_num);
+	}
 
 }

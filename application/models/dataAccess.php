@@ -29,7 +29,7 @@ class DataAccess extends CI_Model {
 	}
 	
 	public function getlistcompterendu($id){
-		$req = "select RAP_BILAN, RAP_DATE, RAP_MOTIF
+		$req = "select RAP_BILAN, RAP_DATE, RAP_MOTIF, RAP_NUM, PRA_NUM
 		from rapport_visite
 		where VIS_Matricule = ?
 		order by RAP_DATE desc";
@@ -56,6 +56,14 @@ class DataAccess extends CI_Model {
 	public function ajoutcr($motif, $bilan, $date, $idUser, $praticien){
 		$req = "INSERT INTO rapport_visite (VIS_MATRICULE, RAP_MOTIF, RAP_BILAN, RAP_DATE, PRA_NUM)
 				 VALUES('$idUser', '$motif', '$bilan', '$date', '$praticien')";
+		$rs = $this->db->query($req, array ());
+		$ligne = 1;
+		return $ligne;
+	}
+	
+	public function ajoutmedicament($idUser, $echantillions,$medicament,$rap_num){
+		$req = "INSERT INTO offrir (VIS_MATRICULE, MED_DEPOTLEGAL, OFF_QTE, RAP_NUM)
+		VALUES('$idUser', '$medicament', '$echantillions','$rap_num')";
 		$rs = $this->db->query($req, array ());
 		$ligne = 1;
 		return $ligne;

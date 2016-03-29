@@ -42,7 +42,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 							  			echo "<td>".$listecr[$i]['RAP_MOTIF']."</td>";
 						            	echo "<td>".$listecr[$i]['RAP_BILAN']."</td>";
 						            	echo "<td> <a class='btn btn-primary'>Détails</a> </td>";
-						            	$indice += 1;
+						            	?> <td> <a href="<?php echo $path ?>crController/formajoutmedicament/<?php echo $listecr[$i]['RAP_NUM'];?>" class='btn btn-primary'><i class="fa fa-plus"></i> Medicament</a> </td>
+						            	<?php $indice += 1;
 					            	echo "</tr>";
 					            }
 			            ?>

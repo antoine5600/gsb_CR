@@ -64,9 +64,7 @@ class crController extends CI_Controller {
 			$this->load->model('crModel');
 			$id = $this->session->userdata('idUser');
 			$listpraticien = $this->crModel->listpraticien();
-			$listmedicament = $this->crModel->listmedicament();
 			$data ['listpraticien'] = $listpraticien;
-			$data ['listmedicament'] = $listmedicament;
 			$this->load->view('cr/ajoutcr.php',$data);
 		}
 	}
@@ -92,6 +90,48 @@ class crController extends CI_Controller {
 	
 				$this->crModel->ajoutcr($motif, $bilan, $date, $idUser,$praticien);
 				$this->index();
+		}
+	}
+	
+	public function formajoutmedicament($rap_num)
+	{
+		if (!$this->session->userdata('idUser'))
+		{
+			$data = array();
+			$this->load->view('login/login.php',$data);
+		}
+		else
+		{
+			$this->load->model('user');
+			$this->load->model('crModel');
+			$id = $this->session->userdata('idUser');
+			$listmedicament = $this->crModel->listmedicament();
+			$data ['listmedicament'] = $listmedicament;
+			$data ['rap_num'] = $rap_num;
+			$this->load->view('cr/ajoutmedicament.php',$data);
+		}
+	}
+	
+	public function ajoutmedicament()
+	{
+		if (!$this->session->userdata('idUser'))
+		{
+			$data = array();
+			$this->load->view('login/login.php',$data);
+		}
+		else
+		{
+			$this->load->model('user');
+			$this->load->model('crModel');
+	
+			$echantillions = $this->input->post('echantillion');
+			$medicament = $this->input->post('medicament');
+			$rap_num = $this->input->post('rap_num');
+	
+			$idUser = $this->session->idUser;
+	
+			$this->crModel->ajoutmedicament($idUser,$echantillions,$medicament,$rap_num);
+			$this->index();
 		}
 	}
 		
