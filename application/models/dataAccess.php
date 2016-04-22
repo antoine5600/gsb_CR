@@ -41,7 +41,7 @@ class DataAccess extends CI_Model {
 	public function getuncr($id,$rapnum){
 		$req = "select RAP_BILAN, RAP_DATE, RAP_MOTIF, RAP_NUM, PRA_NUM
 		from rapport_visite
-		where VIS_Matricule = ".$id." and RAP_NUM = ".$rapnum;
+		where VIS_Matricule = '".$id."' and RAP_NUM = ".$rapnum;
 		$rs = $this->db->query($req, array ($id));
 		$ligne = $rs->result_array();
 		return $ligne;
@@ -65,7 +65,7 @@ class DataAccess extends CI_Model {
 	public function getlesqtemedocs($rapnum, $id){
 		$req = "select *
 		from offrir
-		where VIS_Matricule = ".$id." and RAP_NUM = ".$rapnum;
+		where VIS_Matricule = '".$id."' and RAP_NUM = ".$rapnum;
 		$rs = $this->db->query($req, array ($id));
 		$ligne = $rs->result_array();
 		
@@ -85,7 +85,7 @@ class DataAccess extends CI_Model {
 	public function getunprac($rapnum, $id){
 		$req = "select PRA_NUM
 		from rapport_visite
-		where RAP_NUM = ".$rapnum." and VIS_MATRICULE = ".$id;
+		where RAP_NUM = ".$rapnum." and VIS_MATRICULE = '".$id."'";
 		$rs = $this->db->query($req, array ());
 		$ligne = $rs->first_row('array');
 		
