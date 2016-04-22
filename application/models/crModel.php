@@ -15,6 +15,39 @@ class crModel extends CI_Model {
 		return $listcr;
 	}
 	
+	
+	public function listeuncr($id,$rapnum)
+	{
+		$this->load->model('dataAccess');
+		$uncr = $this->dataAccess->getuncr($id,$rapnum);
+	
+		return $uncr;
+	}
+	
+	public function recupunprac($rapnum,$id)
+	{
+		$this->load->model('dataAccess');
+		$unprac = $this->dataAccess->getunprac($rapnum,$id);
+	
+		return $unprac;
+	}
+	
+	public function recupqtemedocs($rapnum,$id)
+	{
+		$this->load->model('dataAccess');
+		$lesmedocs = $this->dataAccess->getlesqtemedocs($rapnum,$id);
+	
+		return $lesmedocs;
+	}
+	
+	public function recuplesmedocs($idmedoc)
+	{
+		$this->load->model('dataAccess');
+		$lesmedocs = $this->dataAccess->getlesmedocs($idmedoc);
+	
+		return $lesmedocs;
+	}
+	
 	public function listpraticien()
 	{
 		$this->load->model('dataAccess');

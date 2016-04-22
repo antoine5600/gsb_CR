@@ -38,6 +38,15 @@ class DataAccess extends CI_Model {
 		return $ligne;
 	}
 	
+	public function getuncr($id,$rapnum){
+		$req = "select RAP_BILAN, RAP_DATE, RAP_MOTIF, RAP_NUM, PRA_NUM
+		from rapport_visite
+		where VIS_Matricule = ".$id." and RAP_NUM = ".$rapnum;
+		$rs = $this->db->query($req, array ($id));
+		$ligne = $rs->result_array();
+		return $ligne;
+	}
+	
 	public function getAllPraticien(){
 		$req = "select *
 		from praticien";
@@ -51,6 +60,41 @@ class DataAccess extends CI_Model {
 		$rs = $this->db->query($req, array ());
 		$ligne = $rs->result_array();
 		return $ligne;
+	}
+	
+	public function getlesqtemedocs($rapnum, $id){
+		$req = "select *
+		from offrir
+		where VIS_Matricule = ".$id." and RAP_NUM = ".$rapnum;
+		$rs = $this->db->query($req, array ($id));
+		$ligne = $rs->result_array();
+		
+		return $ligne;
+	}
+	
+	public function getlesmedocs($idmedoc){
+		$req = "select MED_NOMCOMMERCIAL
+		from medicament
+		where MED_DEPOTLEGAL = '".$idmedoc."'";
+		$rs = $this->db->query($req, array ());
+		$ligne = $rs->result_array();
+	
+		return $ligne;
+	}
+	
+	public function getunprac($rapnum, $id){
+		$req = "select PRA_NUM
+		from rapport_visite
+		where RAP_NUM = ".$rapnum." and VIS_MATRICULE = ".$id;
+		$rs = $this->db->query($req, array ());
+		$ligne = $rs->first_row('array');
+		
+		$req2 = "select PRA_NOM
+		from praticien
+		where PRA_NUM = ".$ligne['PRA_NUM'];
+		$rs2 = $this->db->query($req2, array ());
+		$ligne2 = $rs2->first_row('array');
+		return $ligne2;
 	}
 	
 	public function ajoutcr($motif, $bilan, $date, $idUser, $praticien){

@@ -40,9 +40,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 							  			echo "<th scope='row'>".$indice."</th>";
 							  			echo "<td>".$listecr[$i]['RAP_DATE']."</td>";
 							  			echo "<td>".$listecr[$i]['RAP_MOTIF']."</td>";
-						            	echo "<td>".$listecr[$i]['RAP_BILAN']."</td>";
-						            	echo "<td> <a class='btn btn-primary'>Détails</a> </td>";
-						            	?> <td> <a href="<?php echo $path ?>crController/formajoutmedicament/<?php echo $listecr[$i]['RAP_NUM'];?>" class='btn btn-primary'><i class="fa fa-plus"></i> Medicament</a> </td>
+						            	echo "<td>".$listecr[$i]['RAP_BILAN']."</td>";?>
+						            	<td> <a href="<?php echo $path ?>crController/details/<?php echo $listecr[$i]['RAP_NUM'];?>" class='btn btn-primary'><i class="fa fa-plus"></i> Détails</a> </td>
+						            	<td> <a href="<?php echo $path ?>crController/formajoutmedicament/<?php echo $listecr[$i]['RAP_NUM'];?>" class='btn btn-primary'><i class="fa fa-plus"></i> Medicament</a> </td>
 						            	<?php $indice += 1;
 					            	echo "</tr>";
 					            }

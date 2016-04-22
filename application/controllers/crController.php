@@ -33,6 +33,55 @@ class crController extends CI_Controller {
 		}
 	}
 	
+	public function details($rapnum)
+	{
+		if (!$this->session->userdata('idUser'))
+		{
+			$data = array();
+			$this->load->view('login/login.php',$data);
+		}
+		else
+		{
+			$this->load->model('crModel');
+			$this->load->model('user');
+			
+			$id = $this->session->userdata('idUser');
+			$data ['listecr'] = $this->listeuncr($rapnum);
+			$uncr = $data ['listecr'];
+			$data ['unprac'] = $this->crModel->recupunprac($rapnum,$id);
+			$data ['qtemedocs'] = $this->crModel->recupqtemedocs($rapnum,$id);
+			$tab = $data ['qtemedocs'];
+			
+			$i = 0;
+			foreach ($tab as $ligne)
+			{
+				$tabfinal[$i] = $this->crModel->recuplesmedocs($ligne['MED_DEPOTLEGAL']);
+				$i += 1;
+			}
+			$data ['lesmedocs'] = $tabfinal;
+			
+			$this->load->view('cr/detail.php',$data);
+		}
+	}
+	
+	public function listeuncr($rapnum)
+	{
+		if (!$this->session->userdata('idUser'))
+		{
+			$data = array();
+			$this->load->view('login/login.php',$data);
+		}
+		else
+		{
+			$this->load->model('user');
+			$this->load->model('crModel');
+			$id = $this->session->userdata('idUser');
+			$uncr = $this->crModel->listeuncr($id,$rapnum);
+		}
+	
+		return $uncr;
+	}
+	
 	public function listecr()
 	{
 		if (!$this->session->userdata('idUser'))
