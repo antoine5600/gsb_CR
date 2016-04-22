@@ -11,3 +11,7 @@ ul li .navbar-brand{
 .navbar-nav .logout{
 	float:right;
 }
+.btnLogin{
+	display : inline-block;
+	margin-top : 26px;
+}

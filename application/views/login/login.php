@@ -24,19 +24,24 @@ $this->load->view('layout/layout.php');
 			   <h2>Identification utilisateur</h2>
 				<?php if (isset($erreur))	echo '<div class ="erreur"><ul><li>'.$erreur.'</li></ul></div>'; ?>
 				<form method="post" action="<?php echo $path.'Welcome/connecter';?>">
-					<p>
-						<label for="login">Login*</label>
-						<input id="login" type="text" name="login"  size="30" maxlength="45"/>
-					</p>
-					<p>
-						<label for="mdp">Mot de passe*</label>
-						<input id="mdp"  type="password"  name="mdp" size="30" maxlength="45"/>
-					</p>
-					<p>
-						<input type="submit" value="Valider" name="valider"/>
-						<input type="reset" value="Annuler" name="annuler"/> 
-					</p>
+					<span class="input input--nariko">
+						<input class="input__field input__field--nariko" type="text" id="input-20" name="login">
+						<label class="input__label input__label--nariko" for="input-20">
+							<span class="input__label-content input__label-content--nariko">Nom</span>
+						</label>
+					</span>
+					<span class="input input--nariko">
+						<input class="input__field input__field--nariko" type="password" id="input-20" name="mdp">
+						<label class="input__label input__label--nariko" for="input-20">
+							<span class="input__label-content input__label-content--nariko">Mot de passe</span>
+						</label>
+					</span>
+					<span class="btnLogin">
+						<button class="button button--quidel button--round-s" type="submit" value="Valider"><span>Valider</span></button>
+						<button class="button button--quidel button--round-s" type="reset" value="Annuler"><span>Annuler</span></button>
+					</span>
 				</form>
+				
             </div>
         </div>
     </div>
