@@ -58,7 +58,10 @@ class crController extends CI_Controller {
 				$tabfinal[$i] = $this->crModel->recuplesmedocs($ligne['MED_DEPOTLEGAL']);
 				$i += 1;
 			}
-			$data ['lesmedocs'] = $tabfinal;
+			if(isset($tabfinal))
+			{
+				$data ['lesmedocs'] = $tabfinal;
+			}
 			
 			$this->load->view('cr/detail.php',$data);
 		}
