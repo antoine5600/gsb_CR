@@ -55,10 +55,10 @@ class crModel extends CI_Model {
 	
 		return $listpraticien;
 	}
-	public function listmedicament()
+	public function listmedicament($id, $rapnum)
 	{
 		$this->load->model('dataAccess');
-		$listmedicament = $this->dataAccess->getAllMedicament();
+		$listmedicament = $this->dataAccess->getMedicamentList($id, $rapnum);
 	
 		return $listmedicament;
 	}

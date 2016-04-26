@@ -157,7 +157,7 @@ class crController extends CI_Controller {
 			$this->load->model('user');
 			$this->load->model('crModel');
 			$id = $this->session->userdata('idUser');
-			$listmedicament = $this->crModel->listmedicament();
+			$listmedicament = $this->crModel->listmedicament($id, $rap_num);
 			$data ['listmedicament'] = $listmedicament;
 			$data ['rap_num'] = $rap_num;
 			$this->load->view('cr/ajoutmedicament.php',$data);

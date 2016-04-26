@@ -61,6 +61,13 @@ class DataAccess extends CI_Model {
 		$ligne = $rs->result_array();
 		return $ligne;
 	}
+	public function getMedicamentList($id, $rapnum){
+		$req = "select * from medicament where MED_DEPOTLEGAL not in (select MED_DEPOTLEGAL from offrir where VIS_MATRICULE ='".$id."' and RAP_NUM ='".$rapnum."');";
+		$rs = $this->db->query($req, array ($id));
+		$ligne = $rs->result_array();
+		return $ligne;
+	}
+	
 	
 	public function getlesqtemedocs($rapnum, $id){
 		$req = "select *

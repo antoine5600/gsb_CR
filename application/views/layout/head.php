@@ -8,8 +8,7 @@
 
 <link href="<?php echo base_url(); ?>assets/TextInputEffects/css/set1.css" rel="stylesheet">
 <link href="<?php echo base_url(); ?>assets/TextInputEffects/css/set2.css" rel="stylesheet">
-<!-- <link href="<?php echo base_url(); ?>assets/TextInputEffects/css/demo.css" rel="stylesheet"> -->
-<!-- <link href="<?php echo base_url(); ?>assets/TextInputEffects/css/normalize.css" rel="stylesheet"> -->
+
 
 <link href="<?php echo base_url(); ?>assets/ButtonStylesInspiration/css/buttons.css" rel="stylesheet">
 
