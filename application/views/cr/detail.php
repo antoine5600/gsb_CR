@@ -19,7 +19,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     <div class="container">
         <div class="row">
             <div class="col-lg-12">
-            <a href="<?php echo $path ?>crController/index" class='btn btn-primary'><i class="fa fa-chevron-left"></i> Précédent</a> <!-- lien a faire -->
+            <a href="<?php echo $path ?>crController/index" class='btn btn-primary'><i class="fa fa-chevron-left"></i> Précédent</a>
 	            <!-- données à récuperer :liste de practiciens, date du rapport , motif du rapport
 	            bilan, et bouton précédent suivant -->
 	            <table class="table table-hover">

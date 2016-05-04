@@ -21,20 +21,21 @@ $this->load->view('layout/layoutconnected.php');
     <div class="container">
         <div class="row">
             <div class="col-lg-12">
-			   <h2>Ajouter un compte rendu</h2>
+            	<a href="<?php echo $path ?>crController/index" class='btn btn-primary'><i class="fa fa-chevron-left"></i> Précédent</a>
+			    <h2>Ajouter un compte rendu</h2>
 				<?php if (isset($erreur))	echo '<div class ="erreur"><ul><li>'.$erreur.'</li></ul></div>'; ?>
 				<form method="post" action="<?php echo $path.'crController/ajoutcr';?>">
 					<p>
 						<label for="motif">Motif Visite*</label>
-						<input id="motif" type="text" name="motif"  size="30" maxlength="45"/>
+						<input id="motif" type="text" required name="motif"  size="30" maxlength="45"/>
 					</p>
 					<p>
 						<label for="bilan">Bilan*</label>
-						<input id="bilan"  type="text"  name="bilan" size="30" maxlength="45"/>
+						<input id="bilan"  type="text" required name="bilan" size="30" maxlength="45"/>
 					</p>
 					<p>
 						<label for="date">Date Visite*</label>
-						<input id="date" type="date" name="date"  size="30" maxlength="45"/>
+						<input id="date" type="date" required name="date"  size="30" maxlength="45"/>
 					</p>
 					<label for="praticien">Choix du praticien*</label>
 					<select name="praticien">
@@ -46,8 +47,8 @@ $this->load->view('layout/layoutconnected.php');
 					?>
 					</select>
 					<p>
-						<input type="submit" value="Valider" name="valider"/>
-						<input type="reset" value="Annuler" name="annuler"/> 
+						<input class='btn btn-primary' type="submit" value="Valider" name="valider"/>
+						<input class='btn btn-primary' type="reset" value="Annuler" name="annuler"/> 
 					</p>
 				</form>
             </div>
